@@ -43,7 +43,7 @@
                                             <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Save Image from web" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xYX-HI-TPk">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Save image from web" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xYX-HI-TPk">
                                                     <frame key="frameInset" minX="15" width="345" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -56,13 +56,25 @@
                                             <segue destination="YTf-3Q-wuL" kind="show" id="hir-Ll-Ag4"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wH3-Pr-0PP">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="z5m-O0-CzY" style="IBUITableViewCellStyleDefault" id="wH3-Pr-0PP">
                                         <rect key="frame" x="0.0" y="108" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wH3-Pr-0PP" id="UQb-gc-7IK">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Read image from app folder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="z5m-O0-CzY">
+                                                    <frame key="frameInset" minX="15" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="nXV-FJ-kh4" kind="show" id="4Al-M3-HKR"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dxw-iK-05q">
                                         <rect key="frame" x="0.0" y="152" width="375" height="44"/>
@@ -157,6 +169,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mzB-cS-MMc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="741.60000000000002" y="143.47826086956522"/>
+        </scene>
+        <!--Read From Folder View Controller-->
+        <scene sceneID="BBJ-zk-iSR">
+            <objects>
+                <viewController id="nXV-FJ-kh4" customClass="ReadFromFolderViewController" customModule="HackNTU_demo_file_saving" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rLn-Cf-JJS"/>
+                        <viewControllerLayoutGuide type="bottom" id="zNE-K9-kg2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UD4-Ir-7ST">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Text here!" translatesAutoresizingMaskIntoConstraints="NO" id="Gbn-48-kcE">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="f94-gu-d39"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jG9-DV-4vV">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="174" id="jb3-TA-sff"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auy-xV-kgf">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="04L-uj-keZ"/>
+                                </constraints>
+                                <state key="normal" title="Ream Image From App Folder"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jG9-DV-4vV" firstAttribute="leading" secondItem="UD4-Ir-7ST" secondAttribute="leadingMargin" constant="51" id="47s-Vr-Xrx"/>
+                            <constraint firstItem="auy-xV-kgf" firstAttribute="top" secondItem="jG9-DV-4vV" secondAttribute="bottom" constant="8" id="A3U-9x-dEM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gbn-48-kcE" secondAttribute="trailing" constant="52" id="Gf6-Ev-Je9"/>
+                            <constraint firstItem="auy-xV-kgf" firstAttribute="centerX" secondItem="jG9-DV-4vV" secondAttribute="centerX" id="IBx-4n-f4O"/>
+                            <constraint firstItem="jG9-DV-4vV" firstAttribute="top" secondItem="Gbn-48-kcE" secondAttribute="bottom" constant="8" id="NWD-kF-sLG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jG9-DV-4vV" secondAttribute="trailing" constant="52" id="TIj-a1-L7N"/>
+                            <constraint firstItem="Gbn-48-kcE" firstAttribute="leading" secondItem="UD4-Ir-7ST" secondAttribute="leadingMargin" constant="51" id="XiA-7h-LVy"/>
+                            <constraint firstItem="Gbn-48-kcE" firstAttribute="top" secondItem="rLn-Cf-JJS" secondAttribute="bottom" constant="8" id="dog-Sf-BSY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="auy-xV-kgf" id="keg-UT-TuM"/>
+                        <outlet property="imageView" destination="jG9-DV-4vV" id="K73-du-frp"/>
+                        <outlet property="textView" destination="Gbn-48-kcE" id="aef-0G-bkq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4sW-BG-jjp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2428" y="880"/>
         </scene>
     </scenes>
 </document>

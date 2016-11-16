@@ -25,12 +25,16 @@ class SaveToAppFolderViewController: UIViewController {
         
         imageView.image = getImageFromURL(path: imageLink)
         
-        button.addTarget(self, action: #selector(SaveToAppFolderViewController.saveImageToFolder(image:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(SaveToAppFolderViewController.saveToFolder), for: .touchUpInside)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func saveToFolder() {
+        self.saveImageToFolder(image: getImageFromURL(path: imageLink))
     }
     
     // Get Image From URL
@@ -69,7 +73,6 @@ class SaveToAppFolderViewController: UIViewController {
             print("file already exists")
         }
     }
-    
     
 
     /*
